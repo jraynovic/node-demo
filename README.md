@@ -198,3 +198,15 @@ module.exports = Application;
     res.sendStatus(200) 
 })
 ```
+18.) use route params to delete. Same as above just a different way of handling it. 
+```
+//delete using route params
+CCRouter.route('/:id')
+.delete(async (req,res)=>{
+    if(!req?.params?.id){
+        return res.status(400).json({ error: 'id is required' });
+    }
+    await Application.destroy({where:{id:req?.params?.id}})
+    res.sendStatus(200)
+})
+```
