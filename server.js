@@ -1,5 +1,5 @@
 const express = require("express");
-const CCRouter = require('./routes/CCRoute');
+const CCRouter = require('./routes/CCRouter');
 const bodyparser = require("body-parser");
 const sequelize = require('./database')
 const app = express();
