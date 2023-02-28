@@ -26,15 +26,24 @@ const PORT = 5001  // assign a port number
 app.listen(PORT, () => { 
     console.log(`App listening on PORT: ${PORT}`); 
 });
+
+```
+- start app by running the command below 
+  
+```
+npm run server
 ```
 5.) Create first route
 ```
 const express = require("express"); 
 const app = express(); 
+
 const PORT = 5001 
+
 app.get('/',(req,res)=>{ 
   res.send('HELLO CODE CONNECTOR!') 
-}) 
+})
+ 
 app.listen(PORT, () => { 
     console.log(`App listening on PORT: ${PORT}`); 
   });
@@ -54,7 +63,7 @@ module.exports = CCRouter;
 - in server.js import CCRouter and register route with express app
 ```
 ...
-const CCRouter = require('./routes/CCRoute');
+const CCRouter = require('./routes/CCRouter');
 ...
 app.use('/cc', CCRouter);
 ```
@@ -155,14 +164,17 @@ Application.init(
     } 
   }, 
   { 
-    sequelize, 
+    sequelize,
     modelName: "Applications", 
   } 
 ); 
 module.exports = Application;
 ```
-14.)Update post route
+14.)Update post route and import model
 ```
+...
+const Application = require('../models/ApplicationModel')
+...
 .post(async (req,res)=>{ 
   if(!req.body.company || !req.body.applicationDate){ 
     return res.status(400).json({ error: 'company and application date are required' }); 
