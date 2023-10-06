@@ -1,4 +1,4 @@
-1.) Create out package.json the "-y" flag is a shortcut to answer yes to everything
+1.) Create our package.json the "-y" flag is a shortcut to answer yes to everything
 ```
 npm init -y
 ```
@@ -39,7 +39,7 @@ app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`); 
   });
 ```
-6.)Break our routes for organization 
+6.)Break out routes for organization 
 - create new folder in root "routes" then add new file "CCRouter.js"
 ```
 const express = require("express"); 
